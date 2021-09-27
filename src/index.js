@@ -14,7 +14,7 @@ const server = new ApolloServer({
   mocks,
   dataSources: () => {
     return {
-      fundAPI: new JefeAPI(),
+      jefeAPI: new JefeAPI(),
     };
   },
 });

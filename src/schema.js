@@ -6,7 +6,7 @@ const typeDefs = gql`
     portfoliosForHome: [Portfolio!]!
 
     "Query to get funds array for the homepage grid"
-    fundsForHome: [Fund!]!
+    fundsForUser: [Fund!]!
 
     "Fetch a specific fund, provided a fund's ID"
     fund(id: ID!): Fund!

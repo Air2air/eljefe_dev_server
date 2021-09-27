@@ -1,6 +1,6 @@
 const mocks = {
   Query: () => ({
-    fundsForHome: () => [...new Array(6)],
+    fundsForUser: () => [...new Array(6)],
   }),
 
   Fund: () => ({
