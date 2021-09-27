@@ -19,12 +19,13 @@ class TrackAPI extends RESTDataSource {
     return this.get(`track/${trackId}`);
   }
 
-  getTrackModules(trackId) {
-    return this.get(`track/${trackId}/modules`);
+  getTrackSymbols(trackId) {
+    return this.get(`track/${trackId}/symbols`);
   }
 
-  getModule(moduleId) {
-    return this.get(`module/${moduleId}`);
+  getSymbol(symbolId) {
+    const moduleId = symbolId; // For the Apollo API
+    return this.get(`symbol/${moduleId}`);
   }
 }
 

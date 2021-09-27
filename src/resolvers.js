@@ -10,9 +10,9 @@ const resolvers = {
       return dataSources.trackAPI.getTrack(id);
     },
 
-    // get a single module by ID, for the module detail page
-    module: (_, { id }, { dataSources }) => {
-      return dataSources.trackAPI.getModule(id);
+    // get a single symbol by ID, for the symbol detail page
+    symbol: (_, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getSymbol(id);
     },
   },
   Track: {
@@ -20,8 +20,8 @@ const resolvers = {
       return dataSources.trackAPI.getAuthor(authorId);
     },
 
-    modules: ({ id }, _, { dataSources }) => {
-      return dataSources.trackAPI.getTrackModules(id);
+    symbols: ({ id }, _, { dataSources }) => {
+      return dataSources.trackAPI.getTrackSymbols(id);
     },
   },
 };

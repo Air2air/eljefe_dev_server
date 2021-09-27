@@ -6,11 +6,11 @@ const typeDefs = gql`
     tracksForHome: [Track!]!
     "Fetch a specific track, provided a track's ID"
     track(id: ID!): Track!
-    "Fetch a specific module, provided a module's ID"
-    module(id: ID!): Module!
+    "Fetch a specific symbol, provided a symbol's ID"
+    symbol(id: ID!): Symbol!
   }
 
-  "A track is a group of Modules that teaches about a specific topic"
+  "A track is a group of Symbols that teaches about a specific topic"
   type Track {
     id: ID!
     "The track's title"
@@ -21,17 +21,17 @@ const typeDefs = gql`
     thumbnail: String
     "The track's approximate length to complete, in minutes"
     length: Int
-    "The number of modules this track contains"
-    modulesCount: Int
+    "The number of symbols this track contains"
+    symbolsCount: Int
     "The track's complete description, can be in markdown format"
     description: String
     "The number of times a track has been viewed"
     numberOfViews: Int
-    "The track's complete array of Modules"
-    modules: [Module!]!
+    "The track's complete array of Symbols"
+    symbols: [Symbol!]!
   }
 
-  "Author of a complete Track or a Module"
+  "Author of a complete Track or a Symbol"
   type Author {
     id: ID!
     "Author's first and last name"
@@ -40,16 +40,16 @@ const typeDefs = gql`
     photo: String
   }
 
-  "A Module is a single unit of teaching. Multiple Modules compose a Track"
-  type Module {
+  "A Symbol is a single unit of teaching. Multiple Symbols compose a Track"
+  type Symbol {
     id: ID!
-    "The module's title"
+    "The symbol's title"
     title: String!
-    "The module's length in minutes"
+    "The symbol's length in minutes"
     length: Int
-    "The module's text-based description, can be in markdown format. In case of a video, it will be the enriched transcript"
+    "The symbol's text-based description, can be in markdown format. In case of a video, it will be the enriched transcript"
     content: String
-    "The module's video url, for video-based modules"
+    "The symbol's video url, for video-based symbols"
     videoUrl: String
   }
 `;
