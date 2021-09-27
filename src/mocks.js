@@ -8,7 +8,7 @@ const mocks = {
     title: () => "Schwab ® U.S. Mid-Cap Index Fund",
     manager: () => {
       return {
-        name: "Grumpy Cat",
+        name: "Grumpy",
         photo:
           "https://res.cloudinary.com/dety84pbu/image/upload/v1606816219/kitty-veyron-sm_mctf3c.jpg",
       };

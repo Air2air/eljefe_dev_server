@@ -15,9 +15,19 @@ const resolvers = {
       return dataSources.fundAPI.getSymbol(id);
     },
   },
+  // Manager: {
+  //   manager: ({ id }, _, { dataSources }) => {
+  //     return dataSources.fundAPI.getManager(id);
+  //   },
+  // },
+  Portfolio: {
+    symbols: ({ id }, _, { dataSources }) => {
+      return dataSources.fundAPI.getFundSymbols(id);
+    },
+  },
   Fund: {
-    manager: ({ managerId }, _, { dataSources }) => {
-      return dataSources.fundAPI.getManager(managerId);
+    manager: ({ id }, _, { dataSources }) => {
+      return dataSources.fundAPI.getManager(id);
     },
 
     symbols: ({ id }, _, { dataSources }) => {

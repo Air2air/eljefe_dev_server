@@ -22,8 +22,11 @@ const typeDefs = gql`
     "Name of the portfolio, user-created"
     name: String!
 
-    "Manager's profile picture"
-    funds: [Fund!]!
+    "Funds in Portfolio"
+    funds: [Fund]
+
+    "Symbols in Portfolio"
+    symbols: [Symbol]
   }
 
   "A Fund is a group of Symbols the fund is invested in."
@@ -34,7 +37,7 @@ const typeDefs = gql`
     title: String!
 
     "The fund's main Manager"
-    manager: Manager!
+    manager: Manager
 
     "The fund's illustration to display in fund card or fund page detail"
     thumbnail: String
@@ -57,7 +60,7 @@ const typeDefs = gql`
 
   "Manager of a complete Fund or a Symbol"
   type Manager {
-    id: ID!
+    id: ID
 
     "Manager's first and last name"
     name: String!

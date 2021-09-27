@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('apollo-datasource-rest');
 
-class FundAPI extends RESTDataSource {
+class JefeAPI extends RESTDataSource {
   constructor() {
     super();
     // the Catstronauts catalog is hosted on this server
@@ -11,8 +11,8 @@ class FundAPI extends RESTDataSource {
     return this.get('funds');
   }
 
-  getManager(managerId) {
-    return this.get(`manager/${managerId}`);
+  getManager(fundId) {
+    return this.get(`fund/${fundId}/manager`);
   }
 
   getFund(fundId) {
@@ -24,9 +24,8 @@ class FundAPI extends RESTDataSource {
   }
 
   getSymbol(symbolId) {
-    const moduleId = symbolId; // For the Apollo API
-    return this.get(`symbol/${moduleId}`);
+    return this.get(`symbol/${fundId}`);
   }
 }
 
-module.exports = FundAPI;
+module.exports = JefeAPI;

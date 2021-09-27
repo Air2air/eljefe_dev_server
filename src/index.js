@@ -6,29 +6,7 @@ const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 const mocks = require('./mocks');
 
-const FundAPI = require('./datasources/fund-api');
-
-// const mocks = {
-//   Query: () => ({
-//     fundsForHome: () => [...new Array(6)]
-//   }),
-
-//   Fund: () => ({
-//     id: () => 'fund_01',
-//     title: () => 'Astro Kitty, Space Explorer',
-//     manager: () => {
-//       return {
-//         name: 'Grumpy Cat',
-//         photo:
-//           'https://res.cloudinary.com/dety84pbu/image/upload/v1606816219/kitty-veyron-sm_mctf3c.jpg'
-//       };
-//     },
-//     thumbnail: () =>
-//       'https://res.cloudinary.com/dety84pbu/image/upload/v1598465568/nebula_cat_djkt9r.jpg',
-//     length: () => 1210,
-//     modulesCount: () => 6
-//   })
-// };
+const JefeAPI = require('./datasources/fund-api');
 
 const server = new ApolloServer({
   typeDefs,
@@ -36,7 +14,7 @@ const server = new ApolloServer({
   mocks,
   dataSources: () => {
     return {
-      fundAPI: new FundAPI(),
+      fundAPI: new JefeAPI(),
     };
   },
 });
