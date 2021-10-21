@@ -7,7 +7,7 @@ class JefeAPI extends RESTDataSource {
     this.baseURL = 'https://odyssey-lift-off-rest-api.herokuapp.com/';
   }
 
-  getFundsForUser() {
+  getFundsListForPortfolio() {
     return this.get('funds');
   }
 

@@ -1,8 +1,8 @@
 const resolvers = {
   Query: {
     // returns an array of Funds owned by the User
-    fundsForUser: (_, __, { dataSources }) => {
-      return dataSources.jefeAPI.getFundsForUser();
+    fundsInPortfolio: (_, { id }, { dataSources }) => {
+      return dataSources.jefeAPI.getFundsForPortfolio(id);
     },
 
     // get a single fund by ID, for the fund detail page
